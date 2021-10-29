@@ -1,0 +1,159 @@
+@import 'partials/mixins';
+
+$color-primary: #000000;
+$color-secondary: #e57339;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    //background-color: #eaebed;
+    color: $color-primary;
+    //@include respond-to(print) {
+        background-color: #ffffff;
+    //}
+}
+h1 {
+    font-size: 36px;
+    text-transform: uppercase;
+}
+h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    color: $color-secondary;
+    //letter-spacing: 1px;
+    text-transform: uppercase;
+}
+h3 {
+    margin-bottom: 5px;
+    padding-bottom: 2px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px #ececec solid;
+}
+h4 {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+h5 {
+    margin-bottom: 5px;
+    font-size: 13px;
+    font-weight: 500;
+}
+p {
+    margin-bottom: 15px;
+    line-height: 125%;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+ul {
+    margin-bottom: 15px;
+    padding-left: 15px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    li {
+        line-height: 125%;
+        margin-bottom: 5px;
+        ul {
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+    }
+}
+%page-section {
+    margin-top: 35px;
+    &:first-child {
+        margin-top: 0;
+    }
+}
+.p-resume {
+    //width: 1024px;
+    //margin: 20px auto 0;
+    //padding: 30px 50px;
+    background-color: #ffffff;
+    //box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+    //@include respond-to(print) {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+    //}
+    .e-personal-info {
+        @extend %page-section;
+    }
+        .e-pi-name {
+            font-size: 36px;
+            font-weight: 700;
+        }
+            .e-pin-last-name {
+                font-weight: 300;
+            }
+        .e-pi-contact-info {
+            margin-top: 12px;
+            color: #555555;
+        }
+    .e-description {
+        @extend %page-section;
+    }
+    .e-experience {
+        @extend %page-section;
+    }
+        .e-e-company {
+            @include clearfix;
+            width: 100%;
+            margin-top: 30px;
+            &.t-first {
+                margin-top: 0;
+            }
+        }
+            .e-ec-column {
+                float: left;
+                &.t-left {
+                    width: 28%;
+                    margin-right: 2%;
+                }
+                &.t-right {
+                    width: 70%;
+                }
+            }
+                .e-ecc-company-name {
+                    font-weight: 600;
+                    border-bottom: none;
+                }
+                .e-ecc-company-info {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                }
+                    .e-eccci-item {
+                        color: #555555;
+                    }
+                .e-ecc-position-title {
+                    border-bottom: none;
+                    &.t-with-dates {
+                        margin-bottom: 0;
+                    }
+                }
+                .e-ecc-position-dates {
+                    font-size: 12px;
+                    font-style: italic;
+                    color: #555555;
+                }
+    .e-education {
+        @extend %page-section;
+    }
+    .e-skills {
+        @extend %page-section;
+    }
+    .e-projects {
+        @extend %page-section;
+    }
+}

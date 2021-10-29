@@ -1,0 +1,14 @@
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+@mixin respond-to($media...) {
+    @each $name in $media {
+        @if $name == print {
+            @media print { @content; }
+        }
+    }
+}
